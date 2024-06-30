@@ -1,0 +1,237 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.jpg' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7ab7ed64c2.js" crossorigin="anonymous"></script>
+    <title>Inicio</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+          <a class="navbar-brand" href="index"><img class="logo" src="{% static 'img/logo.jpg' %}" width="100px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <nav> 
+        <ul class="menu-horizontal h-full">
+          <li>    
+          <a href="{% url 'productos' %}">Alimentos</a>
+            <ul class="z-3 position-absolute menu-vertical">
+                <li><a href="productos">Alimentos Secos</a></li>
+                <li><a href="{% url 'productos' %}">Alimentos Humedos</a></li>
+                <li><a href="productos">Premios y Snakes</a></li>
+            </ul>
+                </li>
+                <li>
+                    <a href="#">Accesorios</a>
+                    <ul class="z-3 position-absolute menu-vertical">
+                        <li><a href="{% url 'productos' %}">Arnes</a></li>
+                        <li><a href="{% url 'productos' %}">Correas</a></li>
+                        <li><a href="{% url 'productos' %}">Entrenamiento</a></li>
+                        <li><a href="{% url 'productos' %}">Platos y Bebederos</a></li>
+                        <li><a href="{% url 'productos' %}">Camas</a></li>
+                        <li><a href="{% url 'productos' %}">Casas</a></li>
+                        <li><a href="{% url 'productos' %}">Collares</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Juguetes</a>
+                    <ul class="z-3 position-absolute menu-vertical">
+                        <li><a href="{% url 'productos' %}">Interactivos</a></li>
+                        <li><a href="{% url 'productos' %}">Rompecabezas</a></li>
+                        <li><a href="{% url 'productos' %}">Funcionales</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contacto">contacto</a></li>
+            </ul>
+        </nav>
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar un producto" aria-label="Recipient's username"
+                  aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+              </div>
+              <a href="{% url 'carrito' %}" class="btn btn-link">
+                <button type="button" class="btn btn-link text-light "><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
+              </a>
+              <div class="dropdown">
+                <button class="dropdown-toggle btn btn-link text-light" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-user fa-xl"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="{% url 'login' %}">Inicia sesion</a></li>
+                  <li><a class="dropdown-item" href="{% url 'signin' %}">Registrate</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+    <br>
+    <hr>
+                  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="{% static 'img/descuento_1.jpg' %}" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{% static 'img/descuento_2.jpg' %}" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{% static 'img/descuento_3.jpg' %}" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+      <br>
+      <hr class="invisible">
+        <center>
+          <h1><strong>Bienvenido a Nuestra Comunidad de Rescate de Perros</strong></h1>
+          <h4>Bienvenido a nuestra comunidad dedicada al amor, cuidado y rescate de nuestros fieles amigos de cuatro patas. En nuestra misión de ayudar a perros en situaciones difíciles, encontramos hogares amorosos y brindamos apoyo continuo para garantizar que cada cola tenga su final feliz.</h3>
+          <hr class="invisible">
+          <hr class="invisible">
+    
+          <h1><strong>Encuentra a tu Compañero Peludo Perfecto</strong></h1>
+          <h4>¿Buscas un compañero peludo para alegrar tu vida? Explora nuestra galería de perros rescatados, cada uno con su propia historia única y un deseo ardiente de encontrar un hogar amoroso. ¡Adopta hoy y cambia dos vidas para siempre!</h4>
+          <hr class="invisible">
+          <hr class="invisible">
+            
+          <h1><strong>Alimenta su Felicidad</strong></h1>
+          <h4>En nuestra tienda, encontrarás una amplia selección de alimentos nutritivos y sabrosos, cuidadosamente seleccionados para satisfacer las necesidades dietéticas de tu peludo amigo. Desde alimentos premium hasta opciones saludables y naturales, tenemos todo lo que necesitas para mantener a tu compañero peludo feliz y saludable.</h3>
+          <hr class="invisible">
+          <hr class="invisible">
+    
+          <h1><strong>Juguetes para Horas de Diversión</strong></h1>
+          <h4>¿Quién dice que los perros no pueden tener diversión? Descubre nuestra colección de juguetes diseñados para mantener a tu perro entretenido y activo. Desde pelotas resistentes hasta peluches suaves, tenemos el juguete perfecto para cada tipo de peludo.</h4>
+          <hr class="invisible">
+          <hr class="invisible">
+    
+            <div>
+              <center><h1><strong>Perros Rescatados Por Nuestra Fundacion</strong></h1></center>
+            </div>
+          <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 py-3 my-3 border-top">
+            <div class="col mb-4">
+              <div class="social-links">
+                <div>
+                  <img class="rescatados" src="{% static 'img/mascota1.jpg' %}" width="200px">
+                  <h2>Max</h2>
+                </div>
+                <ul>
+                </ul>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <h5><div>
+                <img class="rescatados" src="{% static 'img/mascota2.jpg' %}" width="200px">
+                <h2>Rocky</h2>
+              </div></h5>
+              <ul class="nav flex-column">
+              </ul>
+            </div>
+            <div class="col mb-4">
+              <h5><div>
+                <img class="rescatados" src="{% static 'img/mascota3.jpg' %}" width="200px">
+                <h2>Luna</h2>
+              </div></h5>
+              <ul class="nav flex-column">
+              </ul>
+            </div>
+          </div>
+            <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 py-3 my-3 border-top">
+              <div class="col mb-4">
+                <div class="social-links">
+                  <div>
+                    <img class="rescatados" src="{% static 'img/mascota5.webp' %}" width="200px">
+                    <h2>Coco</h2>
+                  </div>
+                  <ul>
+                  </ul>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <h5><div>
+                  <img class="rescatados" src="{% static 'img/mascota3.jpg' %}" width="200px">
+                  <h2>Chocolate</h2>
+                </div></h5>
+                <ul class="nav flex-column">
+                </ul>
+              </div>
+              <div class="col mb-4">
+                <h5><div>
+                  <img class="rescatados" src="{% static 'img/descarga.webp' %}" width="140px">
+                  <h2>Canela</h2>
+                </div></h5>
+                <ul class="nav flex-column">
+                </ul>
+              </div>
+            </div>
+        <footer id="contacto" class="row row-cols-1 row-cols-sm-4 row-cols-md-4 py-4 my-4 border-top">
+          <div class="col mb-3">
+            <div class="social-links">
+              <h4>Nuestras redes sociales</h4>
+              <ul>
+           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </ul>
+            </div>
+          </div>
+          <div class="col mb-3">
+            <h5>Contactanos</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mail: Fundacion.Peludos@Gmail.Com</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Telefono Celular: +56 9 3456 4321</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Telefono Fijo: 2 4578 6544</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Direccion: Av. Tobalaba 3456,La Florida</a></li>
+            </ul>
+          </div>
+          <div class="col mb-3">
+            <h5>Ayuda</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Preguntas Frecuentes</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Envios</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Compras</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Seguimiento de orden</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Facturacion</a></li>
+            </ul>
+          </div>
+          <div class="col mb-3">
+            <h5 name="contacto">Nosotros</h5>
+            <ul class="nav flex-column">
+              <li
+              class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Reclamos</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Acerca De Peludos</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Trabaja Con Nosotros</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Campañas Solidarias</a></li>
+            </ul>
+          </div>
+        </footer>
+        <hr>
+        <center>
+          <h6>© Peludos Chile. - Todos los derechos reservados</h6>
+        </center>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

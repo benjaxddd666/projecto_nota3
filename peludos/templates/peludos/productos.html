@@ -1,0 +1,287 @@
+{% load static %}
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Peludos Chile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'img/logo.jpg' %}">
+  <script src="https://kit.fontawesome.com/7ab7ed64c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+          <a class="navbar-brand" href="index"><img class="logo" src="{% static 'img/logo.jpg' %}" width="100px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <nav> 
+        <ul class="menu-horizontal h-full">
+          <li>    
+          <a href="{% url 'productos' %}">Alimentos</a>
+            <ul class="z-3 position-absolute menu-vertical">
+                <li><a href="productos">Alimentos Secos</a></li>
+                <li><a href="{% url 'productos' %}">Alimentos Humedos</a></li>
+                <li><a href="productos">Premios y Snakes</a></li>
+            </ul>
+                </li>
+                <li>
+                    <a href="#">Accesorios</a>
+                    <ul class="z-3 position-absolute menu-vertical">
+                        <li><a href="{% url 'productos' %}">Arnes</a></li>
+                        <li><a href="{% url 'productos' %}">Correas</a></li>
+                        <li><a href="{% url 'productos' %}">Entrenamiento</a></li>
+                        <li><a href="{% url 'productos' %}">Platos y Bebederos</a></li>
+                        <li><a href="{% url 'productos' %}">Camas</a></li>
+                        <li><a href="{% url 'productos' %}">Casas</a></li>
+                        <li><a href="{% url 'productos' %}">Collares</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Juguetes</a>
+                    <ul class="z-3 position-absolute menu-vertical">
+                        <li><a href="{% url 'productos' %}">Interactivos</a></li>
+                        <li><a href="{% url 'productos' %}">Rompecabezas</a></li>
+                        <li><a href="{% url 'productos' %}">Funcionales</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contacto">contacto</a></li>
+            </ul>
+        </nav>
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar un producto" aria-label="Recipient's username"
+                  aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+              </div>
+              <a href="{% url 'carrito' %}" class="btn btn-link">
+                <button type="button" class="btn btn-link text-light "><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
+              </a>
+              <div class="dropdown">
+                <button class="dropdown-toggle btn btn-link text-light" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-user fa-xl"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="{% url 'login' %}">Inicia sesion</a></li>
+                  <li><a class="dropdown-item" href="{% url 'signin' %}">Registrate</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+<br>
+<h3>Alimentos purina</h3>
+<h6>Recomendados para ti</h6>
+<div id="comida-perro" class="container text-center">
+  <div class="row align-items-center">
+    <br>
+    {% for producto in productoscomidaseca   %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{producto.NombreProducto}}</h5>
+        <p class="card-text">{{producto.Precio}}</p>
+        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+<h3> Accesorios para perros</h3>
+<h6>Recomendados para ti
+</h6>
+
+<div id="accesorios-perro" class="container text-center">
+    <div class="row align-items-center">
+      {% for producto in productosaccesorio   %}  
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{producto.NombreProducto}}</h5>
+          <p class="card-text">{{producto.Precio}}</p>
+          <a href="#" class="btn btn-primary">Agregar al carrito</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+ 
+</div>
+
+</div>
+
+<h3>Juguetes Caninos</h3>
+<h6>Recomendados para ti
+</h6>
+
+<div id="juguetes-perro" class="container text-center">
+    <div class="row align-items-center">
+      {% for producto in productosjuguetes %}
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{producto.NombreProducto}}</h5>
+            <p class="card-text">{{producto.Precio}}</p>
+            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+</div>
+
+</div>
+
+
+
+
+ <div class="col-mg-3">
+ </div>
+ <hr>
+ <h3>Nuestros Recomendados</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/juguete_redondo.jpg" width="100">
+        <p class="card-title"> Juguetes para perro</p>
+      </div>
+    </div>
+ 
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/cama_redonda.jpeg" width="150">
+        <p class="card-title"> Cama para perros </p>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/comida_redonda.jpg" width="100">
+        <p class="card-title"> Alimentos premium </p>
+  
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/comedero_redondo.jpg" width="100">
+        <p class="card-title"> Comederos </p>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/collar_redondo.jpg" width="100">
+        <p class="card-title"> Collares para perros </p>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/cepillo_redondo.jpg" width="100">
+        <p class="card-title"> Cepillos para pelo </p>
+      </div>
+    </div>
+ 
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/cama_redonda.jpeg" width="150">
+        <p class="card-title"> Cama para perros </p>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/comida_redonda.jpg" width="100">
+        <p class="card-title"> Alimentos premium </p>
+  
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/comedero_redondo.jpg" width="100">
+        <p class="card-title"> Comederos </p>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/collar_redondo.jpg" width="100">
+        <p class="card-title"> Collares para perros </p>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <div class="image-container">
+        <img src="img/cepillo_redondo.jpg" width="100">
+        <p class="card-title"> Cepillos para pelo </p>
+      </div>
+    </div>
+    <br>
+<hr>
+<center>
+  <h3>Perfil de administrador</h3>
+  <a href="{% url 'crud' %}" class="btn btn-primary">Acceder</a>
+</center>
+
+    <footer class="row row-cols-1 row-cols-sm-4 row-cols-md-4 py-4 my-4 border-top">
+      <div class="col mb-3">
+        <div class="social-links">
+          <h4>Nuestras redes sociales</h4>
+          <ul>
+       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="col mb-3">
+        <h5>Contactanos</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mail: Fundacion.Peludos@Gmail.Com</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Telefono Celular: +56 9 3456 4321</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Telefono Fijo: 2 4578 6544</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Direccion: Av. Tobalaba 3456,La Florida</a></li>
+        </ul>
+      </div>
+  
+      <div class="col mb-3">
+        <h5>Ayuda</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Preguntas Frecuentes</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Envios</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Compras</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Seguimiento de orden</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Facturacion</a></li>
+        </ul>
+      </div>
+  
+      <div class="col mb-3">
+        <h5>Nosotros</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Reclamos</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Acerca De Peludos</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Trabaja Con Nosotros</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Campañas Solidarias</a></li>
+        </ul>
+      </div>
+    </footer>
+    <hr>
+    <center>
+      <h6>© Peludos Chile. - Todos los derechos reservados</h6>
+    </center>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#idMensajes").delay(2000).fadeOut("slow");
+        })
+    </script>
+</body>
+
+</html>

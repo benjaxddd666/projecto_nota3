@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans';
+}
+
+nav {
+	max-width: none;
+	background-color: rgb(198, 21, 21);
+	font-size: 20px;
+}
+
+.menu-horizontal {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	margin: 0;
+	padding: 0;
+}
+
+.menu-horizontal>li>a {
+	display: block;
+	padding: 15px 20px;
+	color: white;
+	text-decoration: none;
+}	
+
+.menu-horizontal>li:hover {
+	background-color: red;
+}
+
+.menu-vertical {
+	position: absolute;
+	display: none;
+	list-style: none;
+	width: 200px;
+	background-color: rgba(0, 0, 0, .5);
+	padding: 0;
+}
+
+.menu-horizontal li:hover .menu-vertical {
+	display: block;
+}
+
+.menu-vertical li:hover {
+	background-color: black;
+}
+
+.menu-vertical li a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 8px 8px 8px 8px;
+}
+
+#html {
+	margin: auto;
+	padding: 20px;
+	max-width: 900px;
+	background: white;
+}
+
+.card-img-top {
+	width: 250px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+body {
+	font-family: sans-serif;
+	text-transform: capitalize;
+	margin: 0;
+	padding: 0;
+}
+
+.flexer {
+	display: flex;
+}
+
+.rescatados {
+	border-radius: 50%;
+	margin-left: 10px;
+	margin-right: 10px;
+
+}
+
+.centrador {
+	justify-content: center;
+	display: flex;
+}
+
+.error {
+
+	color: red;
+
+	font-size: 0.8em;
+
+}
+
+.valid {
+
+	color: green;
+
+}
+
+input.error {
+
+	border: 1px solid red;
+
+	background-color: #FFCCCC;
+
+}
+
+input.valid {
+
+	border: 1px solid green;
+
+	background-color: #CCFFCC;
+
+}
